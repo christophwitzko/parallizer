@@ -75,4 +75,4 @@ __Arguments__
 
 The MIT License (MIT)
 
-Copyright 2014 Christoph Witzko
+Copyright (c) 2014 Christoph Witzko
