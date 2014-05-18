@@ -4,16 +4,19 @@
   "description": "asynchronous functions helper",
   "author": "Christoph Witzko <npm@christophwitzko.com> (http://christophwitzko.com/)",
   "main": "parallizer.js",
-  "scripts": {
-    "test": "./node_modules/.bin/mocha --require should --reporter spec --check-leaks"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/christophwitzko/parallizer.git"
   },
+  "scripts": {
+    "test": "./node_modules/.bin/mocha --require should --reporter spec --check-leaks"
+  },
   "devDependencies": {
       "mocha": "~1.18.2",
       "should": "~3.3.1"
+  },
+  "engines": {
+      "node": ">= 0.10.0"
   },
   "keywords": [
     "async",
