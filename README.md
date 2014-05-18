@@ -1,6 +1,8 @@
 # parallizer
 [![Build Status](https://api.travis-ci.org/christophwitzko/parallizer.svg?branch=master)](https://travis-ci.org/christophwitzko/parallizer) [![NPM version](https://badge.fury.io/js/parallizer.svg)](http://badge.fury.io/js/parallizer)
 
+[![NPM](https://nodei.co/npm/parallizer.png?downloads=true&stars=true)](https://nodei.co/npm/parallizer/)
+
 > Parallizer is a tool that makes working with asynchronous functions much easier!
 
 ## Installation
@@ -68,3 +70,9 @@ __Arguments__
 ## Tests
 
     $ npm install && npm test
+
+## Licence
+
+The MIT License (MIT)
+
+Copyright 2014 Christoph Witzko
