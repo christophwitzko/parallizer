@@ -6,16 +6,19 @@ var testFn = function(cb){
 
 describe('#parallizer.Parallel()', function(){
   it('should run function', function(done){
+    this.timeout(110);
     var prl = new parallizer.Parallel();
     prl.sadd(testFn, done);
   })
   describe('#sadd()', function(){
     it('should call collector callback (1)', function(done){
+      this.timeout(220);
       var prl = new parallizer.Parallel(1, done);
       prl.sadd(testFn);
       prl.sadd(testFn);
     })
     it('should call collector callback (2)', function(done){
+      this.timeout(110);
       var prl = new parallizer.Parallel(2, done);
       prl.sadd(testFn);
       prl.sadd(testFn);
@@ -23,11 +26,13 @@ describe('#parallizer.Parallel()', function(){
   })
   describe('#add()', function(){
     it('should call collector callback (1)', function(done){
+      this.timeout(220);
       var prl = new parallizer.Parallel(1, done);
       prl.add(testFn);
       prl.add(testFn);
     })
     it('should call collector callback (2)', function(done){
+      this.timeout(110);
       var prl = new parallizer.Parallel(2, done);
       prl.add(testFn);
       prl.add(testFn);

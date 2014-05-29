@@ -1,6 +1,6 @@
 var parallizer = require('./parallizer.js');
 
-var files = ['http://nodejs.org/dist/latest/node-v0.10.28-darwin-x64.tar.gz', 'http://nodejs.org/dist/latest/node-v0.10.28-darwin-x86.tar.gz', 'http://nodejs.org/dist/latest/node-v0.10.28-linux-x64.tar.gz', 'http://nodejs.org/dist/latest/node-v0.10.28-linux-x86.tar.gz'];
+var files = ['http://nodejs.org/dist/v0.10.28/node-v0.10.28-darwin-x64.tar.gz', 'http://nodejs.org/dist/v0.10.28/node-v0.10.28-darwin-x86.tar.gz', 'http://nodejs.org/dist/v0.10.28/node-v0.10.28-linux-x64.tar.gz', 'http://nodejs.org/dist/v0.10.28/node-v0.10.28-linux-x86.tar.gz'];
 
 function downloadFile(url, dest, cb){
   console.log('downloading %s -> %s', url, dest);
@@ -11,7 +11,7 @@ function downloadFile(url, dest, cb){
   dr.pipe(df);
   dr.on('end', cb);
   dr.on('error', cb);*/
-  setTimeout(cb, 1000);
+  setTimeout(cb, 2000); // simulate downloading
 }
 
 var prl = parallizer.Parallel(1, function(){

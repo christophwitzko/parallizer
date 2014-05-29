@@ -11,12 +11,12 @@
 
 ## Example
 
-```
+```js
 var parallizer = require('parallizer');
 
-var prl = new parallizer.Parallel(3);
+var prl = new parallizer.Parallel(3); //creates a new Parallel object that will only run 3 functions at the same time.
 
-var add2 = function(id, rnd, cb){
+var add2 = function(id, rnd, cb){ //very important: last argument must be the callback.
   setTimeout(function(){
     cb(id, rnd);
   }, 100);
@@ -39,7 +39,7 @@ Creates an new Parallel object.
 
 __Arguments__
 
-* `max` - The maximum concurrent running functions. Default: 1;
+* `max` - The maximum concurrent running functions. (Default: 1)
 * `cb` - The callback that will be called if all functions have been executed.
 
 ---------------------------------------
@@ -51,7 +51,7 @@ Adds a function to the queue an executes it if possible.
 __Arguments__
 
 * `fn` - The function to be called, last argument must be a callback.
-* `arg1, arg2, ...` - Arguments for the function; if the last argument is a function it is used as callback.
+* `arg1, arg2, ...` - Arguments for `fn`.
 
 ---------------------------------------
 
@@ -62,10 +62,33 @@ This Function does the same like `parallel.sadd`, but with a different API.
 __Arguments__
 
 * `fn` - The function to be called, last argument must be a callback.
-* `args` - An array of the arguments of the function.
-* `cb` - Last argument of the function (callback).
-* `scope` - The scope of the `fn`.
+* `args` - An array specifying the arguments with which `fn` should be called.
+* `cb` - Callback (last argument) of `fn`.
+* `scope` - The scope (this reference) in which the `fn` is executed.
 * `high` - If `true`, pushes `fn` in front of the queue.
+
+
+__Example__
+
+```js
+var parallizer = require('parallizer');
+
+var prl = new parallizer.Parallel(3); //creates a new Parallel object, that will only run 3 functions at the same time.
+
+var add2 = function(id, cb){ //very important: last argument must be the callback.
+  var self = this;
+  setTimeout(function(){
+    cb(id, self.rnd);
+  }, 100);
+};
+
+for(var i = 0; i < 100; i++){
+  var rnd = Math.floor(Math.random()*500);
+  prl.add(add2, ['ID#' + i], function(id, rnd){
+    console.log(id + ': ' + rnd);
+  }, {rnd: rnd});
+}
+```
 
 ## Tests
 
