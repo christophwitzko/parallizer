@@ -15,7 +15,7 @@ var nextTick = (typeof process === 'object' && typeof process.nextTick === 'func
 
 function Func(fn, args, scope){
   if(!(this instanceof Func)) return new Func(fn, args, scope);
-  this._fn = (typeof fn === 'function' && fn.length > 0) ? fn : function(cb){cb();};
+  this._fn = (typeof fn === 'function') ? fn : function(){};
   this._args = (args && typeof args.length !== 'undefined') ? args : [];
   this._scope = scope || {};
 }
