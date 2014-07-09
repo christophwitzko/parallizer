@@ -1,5 +1,5 @@
 # parallizer
-[![Build Status](https://api.travis-ci.org/christophwitzko/parallizer.svg?branch=master)](https://travis-ci.org/christophwitzko/parallizer) [![NPM version](https://badge.fury.io/js/parallizer.svg)](http://badge.fury.io/js/parallizer)
+[![Build Status](https://api.travis-ci.org/christophwitzko/parallizer.svg?branch=master)](https://travis-ci.org/christophwitzko/parallizer) [![Coverage Status](https://coveralls.io/repos/christophwitzko/parallizer/badge.png?branch=master)](https://coveralls.io/r/christophwitzko/parallizer?branch=master) [![NPM version](https://badge.fury.io/js/parallizer.svg)](http://badge.fury.io/js/parallizer)
 
 [![NPM](https://nodei.co/npm/parallizer.png?downloads=true&stars=true)](https://nodei.co/npm/parallizer/)
 

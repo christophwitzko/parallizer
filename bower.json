@@ -13,6 +13,10 @@
     "parallel",
     "parallizer"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/christophwitzko/parallizer.git"
+  },
   "license": "MIT",
   "ignore": [
     "**/.*",
