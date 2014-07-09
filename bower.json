@@ -1,0 +1,24 @@
+{
+  "name": "parallizer",
+  "main": "parallizer.js",
+  "version": "1.0.4",
+  "homepage": "https://github.com/christophwitzko/parallizer",
+  "authors": [
+    "Christoph Witzko <github@christophwitzko.com>"
+  ],
+  "description": "asynchronous functions helper",
+  "keywords": [
+    "async",
+    "asynchronos",
+    "parallel",
+    "parallizer"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
