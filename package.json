@@ -9,9 +9,9 @@
     "url": "https://github.com/christophwitzko/parallizer.git"
   },
   "scripts": {
-    "test": "./node_modules/.bin/mocha --require should --reporter list --check-leaks",
-    "coverage": "./node_modules/.bin/mocha --require blanket --require should --reporter html-cov > coverage.html",
-    "coveralls": "./node_modules/.bin/mocha --require blanket --require should --reporter mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js"
+    "test": "mocha --require should --reporter list --check-leaks",
+    "coverage": "mocha --require blanket --require should --reporter html-cov > coverage.html",
+    "coveralls": "mocha --require blanket --require should --reporter mocha-lcov-reporter | coveralls"
   },
   "devDependencies": {
     "blanket": "^1.1.6",
