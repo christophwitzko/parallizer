@@ -38,4 +38,22 @@ describe('#parallizer.Parallel()', function(){
       prl.add(testFn);
     })
   })
+  describe('#start() and #pause()', function(){
+    it('should start queue', function(done){
+      this.timeout(110);
+      var prl = new parallizer.Parallel(1, done, true);
+      prl.sadd(testFn);
+      prl.start();
+    })
+    it('should pause queue', function(done){
+      this.timeout(330);
+      var prl = new parallizer.Parallel(1, done);
+      prl.sadd(testFn);
+      prl.sadd(testFn);
+      setTimeout(function(){
+        prl.pause()
+        setTimeout(prl.start.bind(prl), 150)
+      }, 50)
+    })
+  })
 })
