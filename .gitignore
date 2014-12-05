@@ -1,6 +1,9 @@
 # ignore dependencies
 node_modules/
 
+# coverage
+coverage.html
+
 # logs
 *.log
 
