@@ -49,8 +49,8 @@ Collector.prototype.done = function(){
 parallizer.Collector = Collector;
 
 
-function Parallel(max, col){
-  if(!(this instanceof Parallel)) return new Parallel(max, col);
+function Parallel(max, col, paused){
+  if(!(this instanceof Parallel)) return new Parallel(max, col, paused);
   var pm = parseInt(max, 10);
   this._max = (!isNaN(pm) && pm > 0) ? pm : 1;
   if(typeof col === 'function') this._col = new Collector(col);
@@ -58,6 +58,7 @@ function Parallel(max, col){
   else this._col = null;
   this._running = 0;
   this._queue = [];
+  this._paused = !!paused;
 }
 
 Parallel.prototype.add = function(fn, args, cb, scope, high){
@@ -88,12 +89,21 @@ Parallel.prototype.sadd = function(){
 };
 
 Parallel.prototype._check = function(){
-  if(this._running < this._max && this._queue.length > 0){
+  if(!this._paused && this._running < this._max && this._queue.length > 0){
     var fno = this._queue.shift();
     this._running++;
     nextTick(fno.getBindFn());
   }
 };
+
+Parallel.prototype.pause = function(){
+  this._paused = true;
+}
+
+Parallel.prototype.start = function(){
+  this._paused = false;
+  this._check()
+}
 
 parallizer.Parallel = Parallel;
 
