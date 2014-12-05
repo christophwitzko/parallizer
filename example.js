@@ -10,7 +10,7 @@ var files = [
 function downloadFile(url, dest, cb){
   console.log('downloading %s -> %s', url, dest)
   /*
-  use request (https://github.com/mikeal/request) to download file
+  //use request (https://github.com/request/request) to download file
   var dr = request(url)
   var df = fs.createWriteStream(dest)
   dr.pipe(df)
