@@ -13,13 +13,13 @@ describe('#parallizer.Parallel()', function(){
   describe('#sadd()', function(){
     it('should call collector callback (1)', function(done){
       this.timeout(220);
-      var prl = new parallizer.Parallel(1, done);
+      var prl = parallizer.Parallel(1, done);
       prl.sadd(testFn);
       prl.sadd(testFn);
     })
     it('should call collector callback (2)', function(done){
       this.timeout(110);
-      var prl = new parallizer.Parallel(2, done);
+      var prl = parallizer.Parallel(2, done);
       prl.sadd(testFn);
       prl.sadd(testFn);
     })
@@ -27,13 +27,14 @@ describe('#parallizer.Parallel()', function(){
   describe('#add()', function(){
     it('should call collector callback (1)', function(done){
       this.timeout(220);
-      var prl = new parallizer.Parallel(1, done);
+      var col = parallizer.Collector(done)
+      var prl = parallizer.Parallel(1, col);
       prl.add(testFn);
       prl.add(testFn);
     })
     it('should call collector callback (2)', function(done){
       this.timeout(110);
-      var prl = new parallizer.Parallel(2, done);
+      var prl = parallizer.Parallel(2, done);
       prl.add(testFn);
       prl.add(testFn);
     })
@@ -41,13 +42,13 @@ describe('#parallizer.Parallel()', function(){
   describe('#start() and #pause()', function(){
     it('should start queue', function(done){
       this.timeout(110);
-      var prl = new parallizer.Parallel(1, done, true);
+      var prl = parallizer.Parallel(1, done, true);
       prl.sadd(testFn);
       prl.start();
     })
     it('should pause queue', function(done){
       this.timeout(330);
-      var prl = new parallizer.Parallel(1, done);
+      var prl = parallizer.Parallel(1, done);
       prl.sadd(testFn);
       prl.sadd(testFn);
       setTimeout(function(){
