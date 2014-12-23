@@ -7,5 +7,6 @@ env:
   global:
     - COVERALLS_SERVICE_NAME="travis-ci"
     - secure: "JylUwHCc/uOqpVg4EffIdCKfInzHbJYza1+YOtPeJruyumfV/pekxh2NRgtxal957Vre3csw5mj0I0hbkvsX9zTL/sYEQXbhyfFxx0A5ZT5y5tSDjn6pHmEUJ+We4ozReE7MlmFYaf5/n7y1o9VkTM71lgsTIcYi0ausmGhHlrg="
+sudo: false
 notifications:
   email: false
