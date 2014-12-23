@@ -53,12 +53,12 @@ function Parallel(max, col, paused){
   if(!(this instanceof Parallel)) return new Parallel(max, col, paused);
   var pm = parseInt(max, 10);
   this._max = (!isNaN(pm) && pm > 0) ? pm : 1;
-  if(typeof col === 'function') this._col = new Collector(col);
-  else if(col instanceof Collector) this._col = col;
-  else this._col = null;
   this._running = 0;
   this._queue = [];
   this._paused = !!paused;
+  this._col = null;
+  if(typeof col === 'function') this._col = new Collector(col);
+  if(col instanceof Collector) this._col = col;
 }
 
 Parallel.prototype.add = function(fn, args, cb, scope, high){
@@ -72,8 +72,7 @@ Parallel.prototype.add = function(fn, args, cb, scope, high){
     self._check();
   });
   var fno = new Func(fn, args, scope);
-  if(high) self._queue.unshift(fno);
-  else self._queue.push(fno);
+  self._queue[high ? 'unshift': 'push'](fno);
   if(self._col) self._col.start();
   self._check();
 };
