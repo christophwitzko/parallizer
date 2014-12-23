@@ -1,6 +1,6 @@
 {
   "name": "parallizer",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "asynchronous functions helper",
   "author": "Christoph Witzko <npm@christophwitzko.com> (http://christophwitzko.com/)",
   "main": "parallizer.js",
