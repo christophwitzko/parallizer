@@ -24,7 +24,8 @@ var prl = parallizer.Parallel(1, function(){
 })
 
 files.forEach(function(v, i){
-  prl.sadd(downloadFile, v, i + '.tar.gz')
+  prl.add(downloadFile, [v, i + '.tar.gz'], function(){}, null, 0);
+  //prl.sadd(downloadFile, v, i + '.tar.gz')
 })
 
 setTimeout(function(){
