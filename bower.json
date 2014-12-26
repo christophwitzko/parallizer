@@ -1,7 +1,7 @@
 {
   "name": "parallizer",
   "main": "parallizer.js",
-  "version": "1.1.2",
+  "version": "1.2.1",
   "homepage": "https://github.com/christophwitzko/parallizer",
   "authors": [
     "Christoph Witzko <github@christophwitzko.com>"
