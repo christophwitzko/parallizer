@@ -1,5 +1,5 @@
 # parallizer
-[![Build Status](https://api.travis-ci.org/christophwitzko/parallizer.svg?branch=master)](https://travis-ci.org/christophwitzko/parallizer) [![Coverage Status](https://img.shields.io/coveralls/christophwitzko/parallizer.svg)](https://coveralls.io/r/christophwitzko/parallizer?branch=master) [![Code Climate](https://codeclimate.com/github/christophwitzko/parallizer/badges/gpa.svg)](https://codeclimate.com/github/christophwitzko/parallizer) [![NPM version](https://badge.fury.io/js/parallizer.svg)](http://badge.fury.io/js/parallizer)
+[![Travis](https://img.shields.io/travis/christophwitzko/parallizer.svg?style=flat)](https://travis-ci.org/christophwitzko/parallizer) [![Coveralls](https://img.shields.io/coveralls/christophwitzko/parallizer.svg?style=flat)](https://coveralls.io/r/christophwitzko/parallizer?branch=master) [![Code Climate](https://img.shields.io/codeclimate/github/christophwitzko/parallizer.svg?style=flat)](https://codeclimate.com/github/christophwitzko/parallizer) [![npm](https://img.shields.io/npm/v/parallizer.svg?style=flat)](https://www.npmjs.com/package/parallizer) [![npm](https://img.shields.io/npm/dm/parallizer.svg?style=flat)](https://www.npmjs.com/package/parallizer)
 
 [![NPM](https://nodei.co/npm/parallizer.png?downloads=true&stars=true)](https://nodei.co/npm/parallizer/)
 
