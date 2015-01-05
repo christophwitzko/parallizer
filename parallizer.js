@@ -2,7 +2,7 @@
  * parallizer
  * https://github.com/christophwitzko/parallizer
  *
- * Copyright 2014 Christoph Witzko
+ * Copyright 2015 Christoph Witzko
  * Released under the MIT license
  */
 

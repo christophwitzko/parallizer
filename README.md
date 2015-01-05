@@ -1,8 +1,6 @@
 # parallizer
 [![Travis](https://img.shields.io/travis/christophwitzko/parallizer.svg?style=flat)](https://travis-ci.org/christophwitzko/parallizer) [![Coveralls](https://img.shields.io/coveralls/christophwitzko/parallizer.svg?style=flat)](https://coveralls.io/r/christophwitzko/parallizer?branch=master) [![Code Climate](https://img.shields.io/codeclimate/github/christophwitzko/parallizer.svg?style=flat)](https://codeclimate.com/github/christophwitzko/parallizer) [![npm](https://img.shields.io/npm/v/parallizer.svg?style=flat)](https://www.npmjs.com/package/parallizer) [![npm](https://img.shields.io/npm/dm/parallizer.svg?style=flat)](https://www.npmjs.com/package/parallizer)
 
-[![NPM](https://nodei.co/npm/parallizer.png?downloads=true&stars=true)](https://nodei.co/npm/parallizer/)
-
 > Parallizer is a tool that makes working with asynchronous functions much easier.
 
 ## Installation
@@ -89,6 +87,6 @@ Pauses the queue.
 
 ## Licence
 
-The MIT License (MIT)
+The [MIT License (MIT)](http://opensource.org/licenses/MIT)
 
-Copyright (c) 2014 Christoph Witzko
+Copyright © 2015 [Christoph Witzko](https://twitter.com/christophwitzko)
