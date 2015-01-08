@@ -16,7 +16,7 @@
   function Func(fn, args, scope){
     if(!(this instanceof Func)) return new Func(fn, args, scope)
     this._fn = (typeof fn === 'function') ? fn : function(){}
-    this._args = (args && typeof args.length !== 'undefined') ? args : []
+    this._args = (args instanceof Array) ? args : []
     this._scope = scope || {}
   }
 
