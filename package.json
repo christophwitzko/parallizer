@@ -10,7 +10,8 @@
   },
   "scripts": {
     "version": "mversion",
-    "test": "mocha --require should --reporter spec --check-leaks",
+    "test": "standard && npm run mocha",
+    "mocha": "mocha --require should --reporter spec --check-leaks",
     "coverage": "mocha --require blanket --require should --reporter html-cov > coverage.html",
     "coveralls": "mocha --require blanket --require should --reporter mocha-lcov-reporter | coveralls"
   },
@@ -20,7 +21,8 @@
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1",
     "mversion": "^1.9.0",
-    "should": "^4.4.2"
+    "should": "^4.4.2",
+    "standard": "*"
   },
   "engines": {
     "node": ">= 0.10.0"
