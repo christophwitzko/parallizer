@@ -12,13 +12,16 @@
     "test": "standard && npm run mocha",
     "mocha": "mocha --require should --reporter spec --check-leaks",
     "coverage": "mocha --require blanket --require should --reporter html-cov > coverage.html",
-    "coveralls": "mocha --require blanket --require should --reporter mocha-lcov-reporter | coveralls"
+    "coveralls": "mocha --require blanket --require should --reporter mocha-lcov-reporter | coveralls",
+    "prepublish": "git pull --tags && semantic-release pre --no-ci",
+    "postpublish": "semantic-release post --no-ci && git checkout package.json"
   },
   "devDependencies": {
     "blanket": "^1.1.6",
     "coveralls": "^2.11.2",
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1",
+    "semantic-release": "^1.2.1",
     "should": "^4.4.2",
     "standard": "*"
   },
