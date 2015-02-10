@@ -2,6 +2,7 @@ var parallizer = require('../parallizer.js')
 
 /* global describe */
 /* global it */
+/* eslint new-cap:0 */
 
 var testFn = function (cb) {
   setTimeout(cb, 100)

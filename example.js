@@ -19,7 +19,7 @@ function downloadFile (url, dest, cb) {
   setTimeout(cb, 2000) // simulate downloading
 }
 
-var prl = parallizer.Parallel(1, function () {
+var prl = new parallizer.Parallel(1, function () {
   console.log('done.')
 })
 
