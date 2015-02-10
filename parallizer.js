@@ -13,23 +13,6 @@
 
   var nextTick = (typeof process === 'object' && typeof process.nextTick === 'function') ? process.nextTick : function (fn) {setTimeout(fn, 0)}
 
-  function Func (fn, args, scope) {
-    if (!(this instanceof Func)) return new Func(fn, args, scope)
-    this._fn = (typeof fn === 'function') ? fn : function () {}
-    this._args = (args instanceof Array) ? args : []
-    this._scope = scope || {}
-  }
-
-  Func.prototype.run = function () {
-    return this._fn.apply(this._scope, this._args)
-  }
-
-  Func.prototype.getBindFn = function () {
-    return this.run.bind(this)
-  }
-
-  parallizer.Func = Func
-
   function Collector (cb) {
     if (!(this instanceof Collector)) return new Collector(cb)
     this._count = 0
@@ -69,7 +52,8 @@
       self._running--
       self._check()
     })
-    var fno = new Func(fn, args, scope)
+    fn = (typeof fn === 'function') ? fn : function () {}
+    var fno = fn.apply.bind(fn, scope || null, args || [])
     self._queue[high ? 'unshift' : 'push'](fno)
     if (self._col) self._col.start()
     self._check()
@@ -87,9 +71,8 @@
 
   Parallel.prototype._check = function () {
     if (!this._paused && this._running < this._max && this._queue.length > 0) {
-      var fno = this._queue.shift()
       this._running++
-      nextTick(fno.getBindFn())
+      nextTick(this._queue.shift())
     }
   }
 
