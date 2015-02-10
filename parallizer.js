@@ -91,11 +91,6 @@
     module.exports = parallizer
   }
 
-  if (typeof define === 'function' && define.amd) {
-    /* global define */
-    define('parallizer', [], function () {return parallizer})
-  }
-
   if (typeof window === 'object') {
     window.parallizer = parallizer
   }
