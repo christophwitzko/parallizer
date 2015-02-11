@@ -9,24 +9,22 @@
 ## Example
 
 ```js
-var parallizer = require('parallizer');
+var parallizer = require('parallizer')
 
-//creates a new Parallel object
-//that will only run 3 functions at the same time.
-var prl = new parallizer.Parallel(3);
+// creates a new Parallel object
+// that will only run 3 functions at the same time.
+var prl = new parallizer.Parallel(3)
 
-//very important: last argument must be the callback.
-var add2 = function(id, rnd, cb){
-  setTimeout(function(){
-    cb(id, rnd);
-  }, 100);
-};
+// very important: last argument must be the callback.
+var add2 = function (id, rnd, cb) {
+  setTimeout(cb.bind(null, id, rnd), 100)
+}
 
-for(var i = 0; i < 100; i++){
-  var rnd = Math.floor(Math.random()*500);
-  prl.sadd(add2, 'ID#' + i, rnd, function(id, rnd){
-    console.log(id + ': ' + rnd);
-  });
+for (var i = 0; i < 100; i++) {
+  var rnd = Math.floor(Math.random()  *500)
+  prl.sadd(add2, 'ID#' + i, rnd, function (id, rnd) {
+    console.log(id + ': ' + rnd)
+  })
 }
 
 ```
