@@ -13,7 +13,9 @@
     "mocha": "mocha --require should --reporter spec --check-leaks",
     "coverage": "mocha --require blanket --require should --reporter html-cov > coverage.html",
     "coveralls": "mocha --require blanket --require should --reporter mocha-lcov-reporter | coveralls",
-    "build": "browserify index.js --standalone Parallizer -o parallizer.js",
+    "browserify": "browserify index.js --standalone Parallizer -o dist/parallizer.js",
+    "minify": "uglifyjs dist/parallizer.js -o dist/parallizer.min.js",
+    "build": "rm -rf dist && mkdir dist && npm run browserify && npm run minify",
     "prepublish": "npm run build && semantic-release pre",
     "postpublish": "semantic-release post"
   },
@@ -25,7 +27,8 @@
     "mocha-lcov-reporter": "0.0.1",
     "semantic-release": "^3.0.2",
     "should": "^5.0.0",
-    "standard": "*"
+    "standard": "*",
+    "uglify-js": "^2.4.16"
   },
   "engines": {
     "iojs": "^1",
@@ -58,7 +61,7 @@
   },
   "standard": {
     "ignore": [
-      "parallizer.js"
+      "dist/**"
     ]
   }
 }

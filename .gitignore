@@ -1,4 +1,5 @@
-./parallizer.js
+# dist
+dist/
 
 # ignore dependencies
 node_modules/
