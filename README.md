@@ -1,4 +1,4 @@
-# parallizer
+# Parallizer
 [![Travis](https://img.shields.io/travis/christophwitzko/parallizer.svg?style=flat)](https://travis-ci.org/christophwitzko/parallizer) [![Coveralls](https://img.shields.io/coveralls/christophwitzko/parallizer.svg?style=flat)](https://coveralls.io/r/christophwitzko/parallizer?branch=master) [![Code Climate](https://img.shields.io/codeclimate/github/christophwitzko/parallizer.svg?style=flat)](https://codeclimate.com/github/christophwitzko/parallizer) [![npm](https://img.shields.io/npm/v/parallizer.svg?style=flat)](https://www.npmjs.com/package/parallizer) [![npm](https://img.shields.io/npm/dm/parallizer.svg?style=flat)](https://www.npmjs.com/package/parallizer) [![Packagist](https://img.shields.io/packagist/l/doctrine/orm.svg?style=flat)](https://github.com/christophwitzko/parallizer/raw/master/LICENSE)
 > Parallizer is a tool that makes working with asynchronous functions much easier.
 
@@ -9,11 +9,11 @@
 ## Example
 
 ```js
-var parallizer = require('parallizer')
+var Parallizer = require('parallizer')
 
-// creates a new Parallel object
+// creates a new Parallizer object
 // that will only run 3 functions at the same time.
-var prl = new parallizer.Parallel(3)
+var prl = new Parallizer(3)
 
 // very important: last argument must be the callback.
 var add2 = function (id, rnd, cb) {
@@ -31,9 +31,9 @@ for (var i = 0; i < 100; i++) {
 
 ## Documentation
 
-### new parallizer.Parallel([max], [cb], [paused])
+### new Parallizer([max], [cb], [paused])
 
-Creates an new Parallel object.
+Creates an new Parallizer object.
 
 **Arguments**
 
@@ -43,7 +43,7 @@ Creates an new Parallel object.
 
 ---------------------
 
-### parallel.sadd(fn[, arg1[, arg2[, ...]]])
+### parallizer.sadd(fn[, arg1[, arg2[, ...]]])
 
 Adds a function to the queue an executes it if possible.
 
@@ -54,9 +54,9 @@ Adds a function to the queue an executes it if possible.
 
 ---------------------
 
-### parallel.add(fn, [args], [cb], [scope], [high])
+### parallizer.add(fn, [args], [cb], [scope], [high])
 
-This function does the same like `parallel.sadd`, but with a different API.
+This function does the same like `parallizer.sadd`, but with a different API.
 
 **Arguments**
 
@@ -68,13 +68,13 @@ This function does the same like `parallel.sadd`, but with a different API.
 
 ---------------------
 
-### parallel.start()
+### parallizer.start()
 
 Starts the paused queue.
 
 ---------------------
 
-### parallel.pause()
+### parallizer.pause()
 
 Pauses the queue.
 
