@@ -1,9 +1,9 @@
 {
   "name": "parallizer",
-  "version": "1.2.1",
+  "version": "0.0.0-semantically-released",
   "description": "asynchronous functions helper",
   "author": "Christoph Witzko <npm@christophwitzko.com> (http://christophwitzko.com/)",
-  "main": "parallizer.js",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/christophwitzko/parallizer.git"
@@ -13,17 +13,22 @@
     "mocha": "mocha --require should --reporter spec --check-leaks",
     "coverage": "mocha --require blanket --require should --reporter html-cov > coverage.html",
     "coveralls": "mocha --require blanket --require should --reporter mocha-lcov-reporter | coveralls",
-    "prepublish": "semantic-release pre",
+    "browserify": "browserify index.js --standalone Parallizer -o dist/parallizer.js",
+    "minify": "uglifyjs dist/parallizer.js -o dist/parallizer.min.js",
+    "build": "rm -rf dist && mkdir dist && npm run browserify && npm run minify",
+    "prepublish": "npm run build && semantic-release pre",
     "postpublish": "semantic-release post"
   },
   "devDependencies": {
     "blanket": "^1.1.6",
+    "browserify": "^8.1.3",
     "coveralls": "^2.11.2",
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1",
     "semantic-release": "^3.0.2",
-    "should": "^4.4.2",
-    "standard": "*"
+    "should": "^5.0.0",
+    "standard": "*",
+    "uglify-js": "^2.4.16"
   },
   "engines": {
     "iojs": "^1",
@@ -46,8 +51,17 @@
   },
   "config": {
     "blanket": {
-      "pattern": "parallizer.js"
+      "pattern": "parallizer/index.js"
     }
   },
-  "homepage": "https://github.com/christophwitzko/parallizer"
+  "homepage": "https://github.com/christophwitzko/parallizer",
+  "dependencies": {
+    "callback-count": "^0.1.0",
+    "next-tick": "^0.2.2"
+  },
+  "standard": {
+    "ignore": [
+      "dist/**"
+    ]
+  }
 }
