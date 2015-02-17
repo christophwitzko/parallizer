@@ -20,7 +20,7 @@ Parallizer.prototype.add = function (fn, args, cb, scope, high) {
   var self = this
   if (!(args instanceof Array)) args = []
   if (typeof cb !== 'function') cb = function () {}
-  args.push(function() {
+  args.push(function () {
     cb.apply(this, Array.prototype.slice.call(arguments))
     if (self._col) self._col.next()
     self._running--

@@ -13,7 +13,7 @@
     "mocha": "mocha --require should --reporter spec --check-leaks",
     "coverage": "mocha --require blanket --require should --reporter html-cov > coverage.html",
     "coveralls": "mocha --require blanket --require should --reporter mocha-lcov-reporter | coveralls",
-    "build": "browserify index.js --standalone parallizer -o parallizer.js",
+    "build": "browserify index.js --standalone Parallizer -o parallizer.js",
     "prepublish": "npm run build && semantic-release pre",
     "postpublish": "semantic-release post"
   },
@@ -24,7 +24,7 @@
     "mocha": "^2.1.0",
     "mocha-lcov-reporter": "0.0.1",
     "semantic-release": "^3.0.2",
-    "should": "^4.4.2",
+    "should": "^5.0.0",
     "standard": "*"
   },
   "engines": {

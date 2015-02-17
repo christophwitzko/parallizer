@@ -1,4 +1,4 @@
-var parallizer = require('./parallizer.js')
+var Parallizer = require('./')
 
 var files = [
     'http://nodejs.org/dist/v0.10.28/node-v0.10.28-darwin-x64.tar.gz',
@@ -19,7 +19,7 @@ function downloadFile (url, dest, cb) {
   setTimeout(cb, 2000) // simulate downloading
 }
 
-var prl = new parallizer.Parallel(1, function () {
+var prl = new Parallizer(1, function () {
   console.log('done.')
 })
 
