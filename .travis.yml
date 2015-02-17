@@ -8,8 +8,18 @@ cache:
 notifications:
   email: false
 after_success:
-  - npm run coveralls
+- npm run coveralls
 env:
   global:
-    - COVERALLS_SERVICE_NAME="travis-ci"
-    - secure: "JylUwHCc/uOqpVg4EffIdCKfInzHbJYza1+YOtPeJruyumfV/pekxh2NRgtxal957Vre3csw5mj0I0hbkvsX9zTL/sYEQXbhyfFxx0A5ZT5y5tSDjn6pHmEUJ+We4ozReE7MlmFYaf5/n7y1o9VkTM71lgsTIcYi0ausmGhHlrg="
+  - COVERALLS_SERVICE_NAME="travis-ci"
+  - secure: JylUwHCc/uOqpVg4EffIdCKfInzHbJYza1+YOtPeJruyumfV/pekxh2NRgtxal957Vre3csw5mj0I0hbkvsX9zTL/sYEQXbhyfFxx0A5ZT5y5tSDjn6pHmEUJ+We4ozReE7MlmFYaf5/n7y1o9VkTM71lgsTIcYi0ausmGhHlrg=
+  - secure: A6Ynw+P64hSVxuQpf3UbszrA17FuvvOwS9158PsxslXhsO5NfocZta3hiEc5pAOxO64G1g9RY7Qgod6bEF2p3I5w2OeqAGgZ5pQKTpyTFqogG1iPMjbQsfU5cofD5GiWC4zJ51yj1H3HyJo7f4urNH5fVLrLxmXpAemWtj2GmpI=
+deploy:
+  provider: npm
+  email: npm@christophwitzko.com
+  skip_cleanup: true
+  api_key:
+    secure: UadcitgfhkGyojPHeLm3OjcUR7b3rNtOc7jTW78ehaIXNndYZx/teBnShCIqI+k4GxbJbHMvjkOB8dLB96BhtTnS2uWhxP6epi7m8iA90aN2PXfD8cnBRu1B2cu+F/d0/mwvXCL+hvL5Dfs4FSZ5r6ImFVwU/XiB0sfe7BmbMHg=
+  on:
+    branch: master
+    repo: christophwitzko/parallizer
